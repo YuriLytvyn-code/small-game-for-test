@@ -10,4 +10,9 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void FixedUpdate()
+    {
+        // 123
+    }
+
 }
