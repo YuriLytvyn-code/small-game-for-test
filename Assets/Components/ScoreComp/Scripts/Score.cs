@@ -14,6 +14,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // i dont give a fuck
+        // i dont give a fuck   
     }
 }
