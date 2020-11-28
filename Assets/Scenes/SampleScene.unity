@@ -214,12 +214,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1131025835}
   - component: {fileID: 1131025834}
-  - component: {fileID: 1131025833}
   - component: {fileID: 1131025832}
-  - component: {fileID: 1131025836}
-  - component: {fileID: 1131025838}
-  - component: {fileID: 1131025839}
   - component: {fileID: 1131025837}
+  - component: {fileID: 1131025833}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -257,11 +254,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1131025831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8323878d40d3d54b94e668b27fe2f33, type: 3}
+  m_Script: {fileID: 11500000, guid: d530f9d8b2a7ba948a906f9fadfb4d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveForce: 50
   stopSpeed: 0.9889
+  rotSpeed: 120
+  minusAngle: 90
+  fireDelay: 0.5
+  bullet: {fileID: 1691152288259522750, guid: 5dc801d4286d6d744b77af5544ab5923, type: 3}
+  playerHP: 100
+  currentHP: 0
 --- !u!212 &1131025834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -300,7 +303,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d91d4d4fb92969f4eb194eec2543138a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -320,26 +323,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131025831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0.57, y: -1.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1131025836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131025831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843850d669c0e974c94b6964d1163db7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotSpeed: 120
-  minusAngle: 90
 --- !u!68 &1131025837
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -382,31 +371,3 @@ EdgeCollider2D:
   - {x: -0.30099523, y: -0.049748134}
   - {x: -0.30094635, y: -0.03980901}
   - {x: -0.3007501, y: 0.000113841146}
---- !u!114 &1131025838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131025831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd289c5269b68b43a1155d7d69b9148, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
-  currentHP: 0
---- !u!114 &1131025839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131025831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f5f934d8eca7e46aaffa1c66ee878b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireDelay: 0.5
-  bullet: {fileID: 1691152288259522750, guid: 5dc801d4286d6d744b77af5544ab5923, type: 3}
