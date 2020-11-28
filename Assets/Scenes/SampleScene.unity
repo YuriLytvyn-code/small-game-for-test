@@ -215,8 +215,8 @@ GameObject:
   - component: {fileID: 1131025835}
   - component: {fileID: 1131025834}
   - component: {fileID: 1131025833}
-  - component: {fileID: 1131025836}
   - component: {fileID: 1131025832}
+  - component: {fileID: 1131025836}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -257,7 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8323878d40d3d54b94e668b27fe2f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
+  moveForce: 50
+  stopSpeed: 0.999
 --- !u!212 &1131025834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -331,6 +332,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1131025831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c07a024ee769f4aba55c8f0a403ddc, type: 3}
+  m_Script: {fileID: 11500000, guid: 843850d669c0e974c94b6964d1163db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotSpeed: 120
+  minusAngle: 90
