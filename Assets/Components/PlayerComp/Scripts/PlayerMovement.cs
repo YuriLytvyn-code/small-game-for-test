@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveForce = 50f;
     public float stopSpeed = 0.9889f;
+    
     Rigidbody2D rb;
     Vector2 movement;
     void Start()
@@ -26,10 +27,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         movePlayer(movement);
-        // if(Input.GetKey(KeyCode.Space))
-        // {
-        //     stopPlayer(movement);
-        // }
     }
 
     void movePlayer(Vector2 direction)
