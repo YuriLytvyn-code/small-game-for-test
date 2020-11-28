@@ -43,9 +43,10 @@ public class Player : MonoBehaviour
     {
         if(col.gameObject.tag.Equals("EnemyBullet"))
         {
-            TakeDamage(col.gameObject.GetComponent<EnemyBullet>().GetBulletDamage());
             Destroy(col.gameObject);
+            TakeDamage(col.gameObject.GetComponent<EnemyBullet>().GetBulletDamage());
             Debug.Log("Shot!");
+
 
         }
     }
@@ -96,10 +97,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
-        // if(currentHP <= 0)
-        // {
-        //     Die();
-        // }
+        if(currentHP <= 0)
+        {
+            Die();
+        }
     }
 
     void Die()
