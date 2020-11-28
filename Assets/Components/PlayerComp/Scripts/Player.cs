@@ -39,6 +39,17 @@ public class Player : MonoBehaviour
         MovePlayer(movement);
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag.Equals("EnemyBullet"))
+        {
+            TakeDamage(col.gameObject.GetComponent<EnemyBullet>().GetBulletDamage());
+            Destroy(col.gameObject);
+            Debug.Log("Shot!");
+
+        }
+    }
+
     void InputAxis()
     {
         movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -76,7 +87,6 @@ public class Player : MonoBehaviour
         ShootColldow -= Time.deltaTime;
         if(Input.GetKey(KeyCode.Mouse0) && ShootColldow <= 0)
         {
-            Debug.Log("Pey!");
             ShootColldow = fireDelay;
             
             Instantiate(bullet, transform.position, transform.rotation);
@@ -86,10 +96,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
-        if(currentHP <= 0)
-        {
-            Die();
-        }
+        // if(currentHP <= 0)
+        // {
+        //     Die();
+        // }
     }
 
     void Die()
