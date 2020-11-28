@@ -8,8 +8,15 @@ public class ShootingEnemy : MonoBehaviour
     [SerializeField] private float minusAngle = 90;
     [SerializeField] private float fireDelay = 0.5f;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private float rayDistance = 15f;
     float ShootColldow = 0;
     Transform Player;
+    Transform RayCastPos;
+
+    void Start()
+    {
+        RayCastPos = gameObject.transform.GetChild(0).transform;
+    }
 
     void Update()
     {
@@ -56,7 +63,7 @@ public class ShootingEnemy : MonoBehaviour
     {
         if(ShootColldow <= 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 20f);
+            RaycastHit2D hit = Physics2D.Raycast(RayCastPos.position, transform.TransformDirection(Vector2.up), rayDistance);
             if(hit)
             {
                 if(hit.collider.tag.Equals("Player"))
