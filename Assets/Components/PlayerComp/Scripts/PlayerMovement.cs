@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveForce = 5f;
     Rigidbody2D rb;
     Vector2 movement;
     void Start()
@@ -25,6 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     void movePlayer(Vector2 direction)
     {
-        rb.AddForce(direction * moveSpeed * Time.deltaTime);
+        rb.AddForce(direction * moveForce * Time.deltaTime);
     }
 }
