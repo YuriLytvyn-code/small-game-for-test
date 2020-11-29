@@ -28,9 +28,13 @@ public class BackgroundController : MonoBehaviour
     public void spawnStars () {
         for (int i = 0; i < starsAmountAll; i++) {
 
-            GameObject star = Instantiate(starPrefab, Vector3.zero, Quaternion.identity);
+            GameObject star = Instantiate(starPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            
             star.transform.position = generateStarPosition();
+            star.GetComponent<StarController>().parallaxEffectAmount = parallaxEffectAmount;
+            star.GetComponent<StarController>().distance = Random.Range(1, starsAmountFarDispertion * 100f);
 
+            stars.Add(star);
 
         }
     }
