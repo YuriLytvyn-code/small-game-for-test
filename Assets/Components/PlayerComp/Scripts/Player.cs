@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
     public float moveForce = 50f;
     public float stopSpeed = 0.9889f;
     public float rotSpeed = 60f;
-    public float minusAngle = 90f;
+    float minusAngle = 90f;
     float ShootColldow = 0;
     public float fireDelay = 0.5f;
     public GameObject bullet; 
     public float playerHP = 100f;
+
+    private Animator anim;
 
     [SerializeField] private float currentHP;
 
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D> ();
-
+        anim = gameObject.GetComponent<Animator>();
         currentHP = playerHP;
     }
     
@@ -66,7 +68,7 @@ public class Player : MonoBehaviour
 
     void MovePlayer(Vector2 direction)
     {
-        rb.AddForce(direction * moveForce * Time.deltaTime);
+        rb.AddRelativeForce(direction * moveForce * Time.deltaTime);
     }
 
     void StopPlayer(Vector2 direction)
@@ -98,12 +100,21 @@ public class Player : MonoBehaviour
         currentHP -= damage;
         if(currentHP <= 0)
         {
-            Die();
+            DieAnim();
         }
+    }
+
+    void DieAnim()
+    {
+        gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        anim.SetTrigger("Die");
     }
 
     void Die()
     {
+        
         Destroy(gameObject);
     }
 }
