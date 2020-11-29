@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     Vector2 movement;
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D> ();
+        rb = GetComponent<Rigidbody2D> ();
 
         currentHP = playerHP;
     }
