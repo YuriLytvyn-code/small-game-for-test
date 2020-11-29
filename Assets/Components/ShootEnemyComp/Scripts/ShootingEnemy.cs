@@ -75,4 +75,9 @@ public class ShootingEnemy : MonoBehaviour
         }
     }
 
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }

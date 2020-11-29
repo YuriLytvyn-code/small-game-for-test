@@ -6,10 +6,12 @@ public class SootingBody : MonoBehaviour
 {
     [SerializeField] private float enemyHP = 100f;
     [SerializeField] private float currentHp;
+    private Animator anim;
     
     void Start()
     {
         currentHp = enemyHP;
+        anim = gameObject.GetComponent<Animator>();
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -26,9 +28,15 @@ public class SootingBody : MonoBehaviour
         currentHp -= damage;
         if(currentHp <= 0)
         {
-            Die();
+            DieAnim();
         }
     }
+    void DieAnim()
+    {
+        gameObject.GetComponentInChildren<ShootingEnemy>().Die();
+        anim.SetTrigger("death");
+    }
+
     void Die()
     {
         Destroy(gameObject);
