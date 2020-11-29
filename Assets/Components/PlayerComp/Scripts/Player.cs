@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     Vector2 movement;
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D> ();
+        rb = GetComponent<Rigidbody2D> ();
 
         currentHP = playerHP;
     }
@@ -82,7 +82,6 @@ public class Player : MonoBehaviour
         Quaternion desRot = Quaternion.Euler(0, 0, angle);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desRot, rotSpeed * Time.deltaTime);
     }
-
     void Shoot()
     {
         ShootColldow -= Time.deltaTime;

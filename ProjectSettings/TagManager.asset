@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Meteor
+  - EnemyBullet
+  - ShootingEnemy
   layers:
   - Default
   - TransparentFX

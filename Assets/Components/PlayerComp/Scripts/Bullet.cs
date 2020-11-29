@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] public float lifeTime = 5f;
     Vector3 movement;
     Vector3 pos;
+    
     void Update()
     {
         Move();

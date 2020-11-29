@@ -16,6 +16,7 @@ public class ShootingEnemy : MonoBehaviour
     void Start()
     {
         RayCastPos = gameObject.transform.GetChild(0).transform;
+        //test
     }
 
     void Update()
@@ -73,6 +74,11 @@ public class ShootingEnemy : MonoBehaviour
                 
             }
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 }
