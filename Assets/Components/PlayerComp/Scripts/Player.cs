@@ -82,7 +82,6 @@ public class Player : MonoBehaviour
         Quaternion desRot = Quaternion.Euler(0, 0, angle);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desRot, rotSpeed * Time.deltaTime);
     }
-
     void Shoot()
     {
         ShootColldow -= Time.deltaTime;
