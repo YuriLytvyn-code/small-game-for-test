@@ -14,7 +14,7 @@ public class StarController : MonoBehaviour
     private Vector2 playerOldPosition;
 
     void Start() {
-        transform.localScale *= distance / 100f;
+        transform.localScale /= distance / 10f;
         parallaxSpeed = parallaxEffectAmount * 1000f / distance;
 
         player = GameObject.Find("Player").transform;
@@ -24,7 +24,7 @@ public class StarController : MonoBehaviour
         
         Vector2 playerMovementVector = (Vector2)player.position - playerOldPosition;
 
-        if (playerMovementVector.magnitude > 0.1f) {
+        if (playerMovementVector.magnitude != 0) {
             transform.position -= (Vector3)playerMovementVector * parallaxSpeed * Time.deltaTime;
         }
 

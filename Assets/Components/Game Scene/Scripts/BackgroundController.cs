@@ -10,8 +10,7 @@ public class BackgroundController : MonoBehaviour
     public int starsAmountAll = 20;
     public float starsAmountFarDispertion = 0.8f;
 
-    public Camera cam;
-    public Transform player;
+    private Camera cam;
 
     public GameObject starPrefab;
     public float parallaxEffectAmount;
