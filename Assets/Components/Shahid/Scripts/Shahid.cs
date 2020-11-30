@@ -83,7 +83,7 @@ public class Shahid : MonoBehaviour
         isPlayer = isPl;
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHP -= damage;
         if(currentHP <= 0)
@@ -93,7 +93,6 @@ public class Shahid : MonoBehaviour
     }
     void DieAnim()
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         anim.SetTrigger("Die");
     }
 

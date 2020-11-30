@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - ShootingEnemy
   - Shahid
+  - Colider
   layers:
   - Default
   - TransparentFX
