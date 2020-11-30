@@ -8,17 +8,18 @@ public class Shahid : MonoBehaviour
     private bool isPlayer = false;
     private float minusAngle = 90;
 
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
     [SerializeField] private float enemyRotSpeed = 120f;
     [SerializeField] private float enemySpeed = 10f;
 
     [SerializeField] private float enemyHP = 50f;
     [SerializeField] private float currentHP;
+    [SerializeField] private float enemyDamage = 100f;
 
     private Animator anim;
     Vector2 direction;
 
-    void Start()
+    void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         currentHP = enemyHP;
@@ -91,6 +92,12 @@ public class Shahid : MonoBehaviour
             DieAnim();
         }
     }
+
+    public float GetEnemyDamage()
+    {
+        return enemyDamage;
+    }
+
     void DieAnim()
     {
         anim.SetTrigger("Die");

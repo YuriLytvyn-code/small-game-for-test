@@ -48,9 +48,13 @@ public class Player : MonoBehaviour
             Destroy(col.gameObject);
             TakeDamage(col.gameObject.GetComponent<EnemyBullet>().GetBulletDamage());
             Debug.Log("Shot!");
-
-
         }
+        
+        if(col.gameObject.tag.Equals("Shahid"))
+        {
+            Debug.Log("Collide!");
+        }
+
     }
 
     void InputAxis()
