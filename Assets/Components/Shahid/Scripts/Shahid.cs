@@ -11,12 +11,18 @@ public class Shahid : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float enemyRotSpeed = 120f;
     [SerializeField] private float enemySpeed = 10f;
-    
+
+    [SerializeField] private float enemyHP = 50f;
+    [SerializeField] private float currentHP;
+
+    private Animator anim;
     Vector2 direction;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        currentHP = enemyHP;
+        anim = gameObject.GetComponent<Animator>();
     }
     
     void Update()
@@ -51,6 +57,16 @@ public class Shahid : MonoBehaviour
     
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag.Equals("Bullet"))
+        {
+            Debug.Log("hit!");
+            Destroy(col.gameObject);
+            TakeDamage(col.gameObject.GetComponent<Bullet>().GetBulletDamage());
+        }
+    }
+
     void MoveToPlayer()
     {
         Vector3 pos = transform.position;
@@ -65,5 +81,24 @@ public class Shahid : MonoBehaviour
     public void SetIsPlayer(bool isPl)
     {
         isPlayer = isPl;
+    }
+
+    void TakeDamage(float damage)
+    {
+        currentHP -= damage;
+        if(currentHP <= 0)
+        {
+            DieAnim();
+        }
+    }
+    void DieAnim()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        anim.SetTrigger("Die");
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

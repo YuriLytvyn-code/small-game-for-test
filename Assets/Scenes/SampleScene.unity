@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 1087594975}
   - component: {fileID: 1087594974}
   - component: {fileID: 1087594976}
+  - component: {fileID: 1087594977}
   m_Layer: 0
   m_Name: Shahid
   m_TagString: Untagged
@@ -282,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087594971}
   m_LocalRotation: {x: -0, y: -0, z: 0.0018619235, w: 0.9999983}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: -1.1, y: 0.14, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1228203792}
@@ -357,7 +358,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   enemyRotSpeed: 200
-  enemySpeed: 10
+  enemySpeed: 3
+  enemyHP: 50
+  currentHP: 0
+--- !u!95 &1087594977
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087594971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3069cf19ccfa4e54499e0ce1202f8df1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1228203791
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +422,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -425,6 +447,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1825777499124579296, guid: ed0c33bc8076f29468962cc26351d31e,
+        type: 3}
+      propertyPath: rotSpeed
+      value: 160
+      objectReference: {fileID: 0}
     - target: {fileID: 1825777499124579298, guid: ed0c33bc8076f29468962cc26351d31e,
         type: 3}
       propertyPath: m_Name
