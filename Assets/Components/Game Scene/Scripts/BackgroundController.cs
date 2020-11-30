@@ -31,7 +31,7 @@ public class BackgroundController : MonoBehaviour
             
             star.transform.position = generateStarPosition();
             star.GetComponent<StarController>().parallaxEffectAmount = parallaxEffectAmount;
-            star.GetComponent<StarController>().distance = Random.Range(1, starsAmountFarDispertion * 100f);
+            star.GetComponent<StarController>().distance = Random.Range(15, starsAmountFarDispertion * 100f);
 
             stars.Add(star);
 
