@@ -10,6 +10,20 @@ public class Bullet : MonoBehaviour
     Vector3 movement;
     Vector3 pos;
     
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(gameObject.tag.Equals("ShootingEnemy"))
+        {
+            gameObject.GetComponent<ShootingEnemy>().TakeDamage(bulletDamage);
+        }
+
+        if(gameObject.tag.Equals("Shahid"))
+        {
+            gameObject.GetComponent<Shahid>().TakeDamage(bulletDamage);
+        }
+    }
+    
+    
     void Update()
     {
         Move();
