@@ -8,7 +8,7 @@ public class Shahid : MonoBehaviour
     private bool isPlayer = false;
     private float minusAngle = 90;
 
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
     [SerializeField] private float enemyRotSpeed = 120f;
     [SerializeField] private float enemySpeed = 10f;
 
@@ -18,7 +18,7 @@ public class Shahid : MonoBehaviour
     private Animator anim;
     Vector2 direction;
 
-    void Start()
+    void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         currentHP = enemyHP;
@@ -27,6 +27,7 @@ public class Shahid : MonoBehaviour
     
     void Update()
     {
+        Debug.Log("Player " + isPlayer);
         if(isPlayer)
         {
             LookAtPlayer();
