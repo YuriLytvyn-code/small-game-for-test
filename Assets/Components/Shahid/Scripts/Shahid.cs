@@ -7,6 +7,7 @@ public class Shahid : MonoBehaviour
     private Transform Player;
     private bool isPlayer = false;
     private float minusAngle = 90;
+    private bool alive = true;
 
     private Rigidbody2D rb;
     [SerializeField] private float enemyRotSpeed = 120f;
@@ -14,6 +15,7 @@ public class Shahid : MonoBehaviour
 
     [SerializeField] private float enemyHP = 50f;
     [SerializeField] private float currentHP;
+    [SerializeField] private float radius = 8f;
 
     private Animator anim;
     Vector2 direction;
@@ -27,11 +29,24 @@ public class Shahid : MonoBehaviour
     
     void Update()
     {
-        Debug.Log("Player " + isPlayer);
-        if(isPlayer)
+        FindPlayer();
+        if(isPlayer && alive)
         {
             LookAtPlayer();
             MoveToPlayer();
+        }
+        isPlayer = false;
+    }
+
+    void FindPlayer()
+    {
+        Collider2D[] col =  Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), radius);
+        for(int i = 0; i < col.Length; i++)
+        {
+            if(col[i].gameObject.tag.Equals("Player"))
+            {
+                isPlayer = true;
+            }
         }
     }
 
@@ -92,8 +107,9 @@ public class Shahid : MonoBehaviour
             DieAnim();
         }
     }
-    void DieAnim()
+    public void DieAnim()
     {
+        alive = false;
         anim.SetTrigger("Die");
     }
 
