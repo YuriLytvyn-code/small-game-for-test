@@ -10,6 +10,7 @@ public class Shahid : MonoBehaviour
     private bool alive = true;
 
     private Rigidbody2D rb;
+    [SerializeField] private float damage = 100f;
     [SerializeField] private float enemyRotSpeed = 120f;
     [SerializeField] private float enemySpeed = 10f;
 
@@ -94,9 +95,9 @@ public class Shahid : MonoBehaviour
 		transform.position = pos;
     }
 
-    public void SetIsPlayer(bool isPl)
+    public float GetDamage()
     {
-        isPlayer = isPl;
+        return damage;
     }
 
     public void TakeDamage(float damage)
