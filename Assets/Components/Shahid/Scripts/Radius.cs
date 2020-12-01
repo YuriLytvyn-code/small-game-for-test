@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class Radius : MonoBehaviour
 {
-    [SerializeField] private float rad = 8f;
-    Collider2D[] foundedCol;
-
-    private bool isPlayer = false;
-
-    void Update()
+    // Start is called before the first frame update
+    void OnTriggerEnter2D(Collider2D col)
     {
-        foundedCol = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), rad);
-        FindPlayer();
-    }    
-
-    void FindPlayer()
-    {
-        for(int i = 0; i < foundedCol.Length; i++)
-        {
-            if(foundedCol[i].gameObject.tag.Equals("Player"))
-            {
-                isPlayer = true;
-            }
-        }
-        if(isPlayer == true)
-        {
+        if(col.gameObject.tag.Equals("Player"))
+        { 
+            Debug.Log("Is player");
             gameObject.GetComponentInParent<Shahid>().SetIsPlayer(true);
         }
-        else
-        {
+    }
+
+    
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.gameObject.tag.Equals("Player"))
+        { 
+            Debug.Log("Not player");
             gameObject.GetComponentInParent<Shahid>().SetIsPlayer(false);
-            isPlayer = false;
         }
     }
 }
