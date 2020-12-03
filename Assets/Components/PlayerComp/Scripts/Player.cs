@@ -48,8 +48,13 @@ public class Player : MonoBehaviour
             Destroy(col.gameObject);
             TakeDamage(col.gameObject.GetComponent<EnemyBullet>().GetBulletDamage());
             Debug.Log("Shot!");
+        }
 
-
+        if(col.gameObject.tag.Equals("Shahid"))
+        {
+            col.gameObject.GetComponent<Shahid>().DieAnim();
+            TakeDamage(col.gameObject.GetComponent<Shahid>().GetDamage());
+            Debug.Log("Boom");
         }
     }
 

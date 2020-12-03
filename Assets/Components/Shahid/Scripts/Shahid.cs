@@ -7,18 +7,21 @@ public class Shahid : MonoBehaviour
     private Transform Player;
     private bool isPlayer = false;
     private float minusAngle = 90;
+    private bool alive = true;
 
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
+    [SerializeField] private float damage = 100f;
     [SerializeField] private float enemyRotSpeed = 120f;
     [SerializeField] private float enemySpeed = 10f;
 
     [SerializeField] private float enemyHP = 50f;
     [SerializeField] private float currentHP;
+    [SerializeField] private float radius = 8f;
 
     private Animator anim;
     Vector2 direction;
 
-    void Start()
+    void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         currentHP = enemyHP;
@@ -27,10 +30,24 @@ public class Shahid : MonoBehaviour
     
     void Update()
     {
-        if(isPlayer)
+        FindPlayer();
+        if(isPlayer && alive)
         {
             LookAtPlayer();
             MoveToPlayer();
+        }
+        isPlayer = false;
+    }
+
+    void FindPlayer()
+    {
+        Collider2D[] col =  Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), radius);
+        for(int i = 0; i < col.Length; i++)
+        {
+            if(col[i].gameObject.tag.Equals("Player"))
+            {
+                isPlayer = true;
+            }
         }
     }
 
@@ -78,9 +95,9 @@ public class Shahid : MonoBehaviour
 		transform.position = pos;
     }
 
-    public void SetIsPlayer(bool isPl)
+    public float GetDamage()
     {
-        isPlayer = isPl;
+        return damage;
     }
 
     public void TakeDamage(float damage)
@@ -91,8 +108,9 @@ public class Shahid : MonoBehaviour
             DieAnim();
         }
     }
-    void DieAnim()
+    public void DieAnim()
     {
+        alive = false;
         anim.SetTrigger("Die");
     }
 
