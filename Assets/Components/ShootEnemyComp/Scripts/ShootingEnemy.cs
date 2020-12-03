@@ -13,6 +13,8 @@ public class ShootingEnemy : MonoBehaviour
     Transform Player;
     Transform RayCastPos;
 
+    Vector2 direction;
+
     void Start()
     {
         RayCastPos = gameObject.transform.GetChild(0).transform;
@@ -42,7 +44,7 @@ public class ShootingEnemy : MonoBehaviour
         }
 
         Vector3 playerPos = Player.position - transform.position;
-        Vector2 direction = new Vector2(playerPos.x - transform.position.x, playerPos.y - transform.position.y);
+        direction = new Vector2(playerPos.x - transform.position.x, playerPos.y - transform.position.y);
         float angle = Mathf.Atan2(playerPos.y, playerPos.x) * Mathf.Rad2Deg - minusAngle;
         Quaternion desRot = Quaternion.Euler(0, 0, angle);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desRot, enemyRotSpeed * Time.deltaTime);

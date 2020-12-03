@@ -8,6 +8,8 @@ TagManager:
   - Meteor
   - EnemyBullet
   - ShootingEnemy
+  - Shahid
+  - Colider
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - 
   - Player
   - Meteor
-  - 
-  - 
+  - Col
+  - Enemy
   - 
   - 
   - 
