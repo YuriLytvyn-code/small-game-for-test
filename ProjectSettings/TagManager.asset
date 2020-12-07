@@ -10,6 +10,7 @@ TagManager:
   - ShootingEnemy
   - Shahid
   - Colider
+  - ScoreController
   layers:
   - Default
   - TransparentFX
