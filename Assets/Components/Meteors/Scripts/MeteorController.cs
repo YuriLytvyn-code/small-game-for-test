@@ -24,7 +24,7 @@ public class MeteorController : MonoBehaviour
         }
     }
 
-    void DestroyAnim()
+    public void DestroyAnim()
     {
         anim.SetTrigger("Die");
     }

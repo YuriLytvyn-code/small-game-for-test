@@ -56,6 +56,13 @@ public class Player : MonoBehaviour
             TakeDamage(col.gameObject.GetComponent<Shahid>().GetDamage());
             Debug.Log("Boom");
         }
+
+        if(col.gameObject.tag.Equals("Meteor"))
+        {
+            col.gameObject.GetComponent<MeteorController>().DestroyAnim();
+            TakeDamage(col.gameObject.GetComponent<MeteorController>().GetDamage());
+            Debug.Log("Meteor");
+        }
     }
 
     void InputAxis()

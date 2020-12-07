@@ -23,6 +23,12 @@ public class Bullet : MonoBehaviour
             col.gameObject.GetComponent<Shahid>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
+
+        if(col.gameObject.tag.Equals("Meteor"))
+        {
+            col.gameObject.GetComponent<MeteorController>().TakeDamage(bulletDamage);
+            Destroy(gameObject);
+        }
     }
     
     
