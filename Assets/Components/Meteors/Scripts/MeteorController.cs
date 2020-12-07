@@ -26,6 +26,7 @@ public class MeteorController : MonoBehaviour
 
     public void DestroyAnim()
     {
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         anim.SetTrigger("Die");
     }
 
