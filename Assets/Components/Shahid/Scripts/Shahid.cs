@@ -13,7 +13,7 @@ public class Shahid : MonoBehaviour
     [SerializeField] private float damage = 100f;
     [SerializeField] private float enemyRotSpeed = 120f;
     [SerializeField] private float enemySpeed = 10f;
-
+    [SerializeField] private int scoreForKill = 3000;
     [SerializeField] private float enemyHP = 50f;
     [SerializeField] private float currentHP;
     [SerializeField] private float radius = 8f;
@@ -82,6 +82,12 @@ public class Shahid : MonoBehaviour
             Destroy(col.gameObject);
             TakeDamage(col.gameObject.GetComponent<Bullet>().GetBulletDamage());
         }
+
+        if(col.gameObject.tag.Equals("Meteor"))
+        {
+            col.gameObject.GetComponent<MeteorController>().DestroyAnim();
+            DieAnim();
+        }
     }
 
     void MoveToPlayer()
@@ -105,6 +111,7 @@ public class Shahid : MonoBehaviour
         currentHP -= damage;
         if(currentHP <= 0)
         {
+            GameObject.FindWithTag("ScoreController").gameObject.GetComponent<ScoreSystem>().TakeScore(scoreForKill);
             DieAnim();
         }
     }
