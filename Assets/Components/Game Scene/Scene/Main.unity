@@ -218,6 +218,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: -1}
+--- !u!1 &550142859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9202928613572801159, guid: fc95929df0f1a2ec8873f11deae7ccf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5133665011995824293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &550142860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550142859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d377eeaf1af3bd29889a3bff72db77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars: []
+  starsInChunk: 60
+  chunkSize: 15
+  starPrefab: {fileID: 2013984331534418263, guid: 499488b8567a806438490684110c48cb,
+    type: 3}
+  rows: 5
+  cols: 5
 --- !u!1 &702685632 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8369125266457409431, guid: ed0c33bc8076f29468962cc26351d31e,
@@ -454,7 +479,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Backgorund
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 813057720248338580, guid: fc95929df0f1a2ec8873f11deae7ccf5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc95929df0f1a2ec8873f11deae7ccf5, type: 3}
 --- !u!1001 &8369125266828727895
 PrefabInstance:
