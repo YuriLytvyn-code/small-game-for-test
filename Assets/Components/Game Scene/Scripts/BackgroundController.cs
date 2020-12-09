@@ -24,6 +24,22 @@ public class BackgroundController : MonoBehaviour
         spawnStars();
     }
 
+    void Update() {
+        checkIfStarsInBorders();
+    }
+
+    public void checkIfStarsInBorders () {
+        foreach (GameObject star in stars) {            
+            if (star.transform.position.x + starPositionPaddingX < cam.ViewportToWorldPoint(new Vector3(0,0,0)).x || 
+                star.transform.position.x - starPositionPaddingX > cam.ViewportToWorldPoint(new Vector3(1,1,0)).x ||
+                star.transform.position.y + starPositionPaddingY < cam.ViewportToWorldPoint(new Vector3(0,0,0)).y ||
+                star.transform.position.y - starPositionPaddingY > cam.ViewportToWorldPoint(new Vector3(1,1,0)).y) {
+                    star.transform.position += ( cam.transform.position - star.transform.position ) * Random.Range(1.2f, 1.7f);
+                    star.transform.position = new Vector3(star.transform.position.x, star.transform.position.y, 0);
+            }
+        }
+    }
+
     public void spawnStars () {
         for (int i = 0; i < starsAmountAll; i++) {
 
