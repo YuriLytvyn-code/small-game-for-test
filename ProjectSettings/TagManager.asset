@@ -11,6 +11,7 @@ TagManager:
   - Shahid
   - Colider
   - ScoreController
+  - HP
   layers:
   - Default
   - TransparentFX
