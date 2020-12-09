@@ -53,6 +53,6 @@ MonoBehaviour:
   - {fileID: 8024810727696796517, guid: 59a0c73ec39feb842a5f2875cc12bbfd, type: 3}
   - {fileID: 3979186493676837498, guid: 20f3dafbaa8fdc342b7f86d0a0b6123f, type: 3}
   - {fileID: 3979186493676837498, guid: 20f3dafbaa8fdc342b7f86d0a0b6123f, type: 3}
-  - {fileID: 8635768218203828568, guid: 129542faae2259f4fa0359ef5e47e306, type: 3}
+  - {fileID: 6468017173096719142, guid: 0b7dfde8de26ac64fbaeb515a01e29e0, type: 3}
   - {fileID: 6468017173096719142, guid: 0b7dfde8de26ac64fbaeb515a01e29e0, type: 3}
   spawnRate: 3000
