@@ -111,7 +111,7 @@ public class Shahid : MonoBehaviour
         currentHP -= damage;
         if(currentHP <= 0)
         {
-            GameObject.FindWithTag("ScoreController").gameObject.GetComponent<ScoreSystem>().TakeScore(scoreForKill);
+            GameObject.FindWithTag("ScoreController").gameObject.GetComponent<ScoreSystem>().TakeScore(scoreForKill/2);
             DieAnim();
         }
     }

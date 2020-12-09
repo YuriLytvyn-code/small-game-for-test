@@ -99,9 +99,7 @@ MonoBehaviour:
   meteorHP: 200
   currentHP: 0
   meteorDamage: 100
-  ironKoef: 1
-  goldKoef: 5
-  diamondKoef: 10
+  Koef: 1
 --- !u!58 &4854566391920004688
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -115,9 +115,7 @@ MonoBehaviour:
   meteorHP: 200
   currentHP: 0
   meteorDamage: 100
-  ironKoef: 1
-  goldKoef: 5
-  diamondKoef: 10
+  Koef: 1
 --- !u!95 &8024810727696796516
 Animator:
   serializedVersion: 3

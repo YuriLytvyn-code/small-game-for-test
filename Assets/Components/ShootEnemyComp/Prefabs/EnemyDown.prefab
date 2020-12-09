@@ -277,4 +277,4 @@ MonoBehaviour:
   minusAngle: 90
   fireDelay: 0.5
   bullet: {fileID: 2461650483286743400, guid: 168609cba143e3b4c87eeb1807631252, type: 3}
-  rayDistance: 15
+  rayDistance: 10
