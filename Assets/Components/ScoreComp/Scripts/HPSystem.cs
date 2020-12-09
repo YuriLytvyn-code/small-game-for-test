@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class HPSystem : MonoBehaviour
 {
-    [SerializeField] private int HP = 0;
+    [SerializeField] private float HP = 0;
     [SerializeField] private Text ScoreText;
     
-    public void TakeHP(int HPcount)
+    public void TakeHP(float HPcount)
     {
         if(HPcount < 0)
         {
             HPcount = 0;
         }
-        HP += HPcount;
+        HP = HPcount;
         ScoreText.text = HP.ToString();
     }
 }

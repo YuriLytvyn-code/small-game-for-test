@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &578411090355189688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 578411090355189690}
+  - component: {fileID: 578411090355189689}
+  m_Layer: 0
+  m_Name: generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &578411090355189690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578411090355189688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578411090355189689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578411090355189688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73c4a03a1ca92e47bb0f0d47ff13b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AsteroidPrefabs:
+  - {fileID: 4854566391920004686, guid: 1c31ac9ab443a364785d5e34072d0039, type: 3}
+  - {fileID: 4854566391920004686, guid: 1c31ac9ab443a364785d5e34072d0039, type: 3}
+  - {fileID: 4854566391920004686, guid: 1c31ac9ab443a364785d5e34072d0039, type: 3}
+  - {fileID: 4854566391920004686, guid: 1c31ac9ab443a364785d5e34072d0039, type: 3}
+  - {fileID: 8024810727696796517, guid: 59a0c73ec39feb842a5f2875cc12bbfd, type: 3}
+  - {fileID: 8024810727696796517, guid: 59a0c73ec39feb842a5f2875cc12bbfd, type: 3}
+  - {fileID: 8024810727696796517, guid: 59a0c73ec39feb842a5f2875cc12bbfd, type: 3}
+  - {fileID: 3979186493676837498, guid: 20f3dafbaa8fdc342b7f86d0a0b6123f, type: 3}
+  - {fileID: 3979186493676837498, guid: 20f3dafbaa8fdc342b7f86d0a0b6123f, type: 3}
+  - {fileID: 8635768218203828568, guid: 129542faae2259f4fa0359ef5e47e306, type: 3}
+  - {fileID: 6468017173096719142, guid: 0b7dfde8de26ac64fbaeb515a01e29e0, type: 3}
+  spawnRate: 3000

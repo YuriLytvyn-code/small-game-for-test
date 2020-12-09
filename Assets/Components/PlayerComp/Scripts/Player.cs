@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D> ();
         anim = gameObject.GetComponent<Animator>();
         currentHP = playerHP;
+        GameObject.FindWithTag("HP").gameObject.GetComponent<HPSystem>().TakeHP(currentHP);
     }
     
     void Update()
@@ -110,6 +111,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
+        GameObject.FindWithTag("HP").gameObject.GetComponent<HPSystem>().TakeHP(currentHP);
         if(currentHP <= 0)
         {
             DieAnim();
