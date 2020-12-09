@@ -6,6 +6,7 @@ public class SootingBody : MonoBehaviour
 {
     [SerializeField] private float enemyHP = 100f;
     [SerializeField] private float currentHp;
+    [SerializeField] private int scoreForKill = 3000;
     private Animator anim;
     
     void Start()
@@ -28,6 +29,7 @@ public class SootingBody : MonoBehaviour
         currentHp -= damage;
         if(currentHp <= 0)
         {
+            GameObject.FindWithTag("ScoreController").gameObject.GetComponent<ScoreSystem>().TakeScore(scoreForKill);
             DieAnim();
         }
     }
